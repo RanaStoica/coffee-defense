@@ -272,8 +272,9 @@ Coffee Defense is a blockchain tower defense game where players defend their cof
 - Enhanced cross-chain functionality with emerging L2 solutions
 
 ### Coffee Defense Team
-- **Project Lead**: Rana Stoica
+- **Project Lead**: Rana Stoica - contact@ranastoica.xyz
 - **Lead Dev**: Manus AI
+- **Dev Assistant**: Gemini AI
 
 ---
 
