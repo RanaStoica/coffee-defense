@@ -1,281 +1,115 @@
-⚠️ **WARNING**: This project is in test phase for the $GRIND VIBECODE HACKATHON. DO NOT use main-net wallets with this application. Only use test-net wallets specifically created for testing purposes. Note that early versions do not implement Web3 features.
+⚠️ **WARNING**: This project is in test phase for the $GRIND VIBECODE HACKATHON. DO NOT use main-net wallets with this application. Only use test-net wallets specifically created for testing purposes. Actual implementationWeb3 features will start closer to the submission deadline for Hackathon.
 
 ---
 
-# Coffee Defense - Comprehensive Overview of Features and Technologies
+# Coffee Defense: A Karen Story
 
-## Overview
-Coffee Defense is a blockchain tower defense game where players defend their coffee shop against waves of enemies called "Karens." The game integrates blockchain mechanisms, particularly the $GRIND token, and offers various innovative features such as Contamination Zones and Grind mascot integration.
+Coffee Defense: A Karen Story is a tower defense game where you protect your coffee shop from "Karen" invaders using various tower types and special abilities. This game features blockchain integration with $KAREN and $GRIND tokens, as well as NFT functionality.
 
-## Gameplay and Mechanics
+## Features
 
-### Basic Concept
-- **Genre**: Tower Defense
-- **Theme**: Defending a coffee shop against disgruntled "Karens"
-- **Objective**: Prevent enemies from reaching your coffee shop by strategically placing defensive towers
+- **Tower Defense Gameplay**: Place and upgrade different types of coffee-themed towers
+- **Enemy Variety**: Different types of "Karen" enemies with unique behaviors
+- **Web3 Integration**: Connect your wallet and earn real tokens
+- **Grind Hamster Features**:
+  - Special Hamster Tower (purchasable with $GRIND tokens)
+  - Grind Runner Mini-Game
+  - Interactive Guide/Narrator
 
-### Main Mechanics
-- **Tower Placement**: Different types of towers with unique abilities
-    - Barista Tower: Basic attack
-    - Espresso Tower: Long range, high damage
-    - Cappuccino Tower: Area damage
-    - Frappé Tower: Slows down enemies
-    - Grind Hamster Tower: Special tower with unique abilities
+## Local Testing Setup
 
-- **Enemy Waves**: Progressively increasing difficulty
-    - Standard Karen
-    - Speed Karen
-    - Tank Karen (resistant)
-    - Flying Karen
-    - Boss Karen
-    - Group Karen
-    - Complaining Karen (special abilities)
+Follow these steps to run the game locally:
 
-- **In-Game Economy**:
-    - Game currency earned by eliminating enemies
-    - Used to build and upgrade towers
-    - Score system based on performance
+### Prerequisites
 
-- **Level System**:
-    - Different maps representing various coffee shops
-    - Difficulty progression
-    - Unlocking new towers and abilities
+- A modern web browser (Chrome, Firefox, Edge, etc.)
+- Basic understanding of running a local web server
+- Optional: MetaMask or another Web3 wallet for blockchain features
+
+### Installation
+
+1. Clone this repository:
+   ```
+   git clone https://github.com/yourusername/coffee-defense.git
+   cd coffee-defense
+   ```
+
+2. Start a local web server. You can use any of these methods:
+
+   **Using Python:**
+   ```
+   # Python 3
+   python -m http.server 8000
+   
+   # Python 2
+   python -m SimpleHTTPServer 8000
+   ```
+
+   **Using Node.js:**
+   ```
+   # Install http-server globally (if not already installed)
+   npm install -g http-server
+   
+   # Start server
+   http-server
+   ```
+
+3. Open your browser and navigate to:
+   - http://localhost:8000 (if using Python)
+   - http://localhost:8080 (if using http-server with default settings)
+
+### File Structure
+
+```
+coffee-defense/
+  ├── index.html           # Main HTML entry point
+  ├── README.md            # This file
+  ├── js/
+  │   ├── coffee-defense-core.js    # Core game engine
+  │   ├── blockchain-config.js      # Blockchain settings
+  │   ├── karen-token-system.js     # $KAREN token functionality
+  │   ├── hamster-tower.js          # Grind Hamster Tower
+  │   ├── grind-runner-minigame.js  # Grind Runner mini-game
+  │   ├── grind-hamster-guide.js    # In-game tutorial guide
+  │   └── main.js                   # Main initialization
+  └── assets/
+      └── placeholder.txt          # Placeholder for future assets
+```
 
 ## Blockchain Integration
 
-### Network
-- **Blockchain**: Abstract Chain
-- **Test Environment**: Abstract Testnet
+The game integrates with the following blockchain components:
 
-### Smart Contracts
-- **CoffeeDefenseGame.sol**: Main game contract
-- **CoffeeDefenseDeployment.sol**: Deployment management
-- **GrindTokenInterface.js**: Interface to interact with the $GRIND token
+- **$KAREN Token**: Main in-game currency (deployed on Abstract testnet)
+- **$GRIND Token**: Special currency for premium features
+- **WEN Utility NFTs**: Provides in-game bonuses
+- **The Plague NFTs**: Can be used as support units or enemies
 
-### Authentication
-- Multi-provider Web3 authentication system
-- Support for Metamask and other compatible wallets
-- Login system via Privy and Abstract Global Wallet
+### Test Environment
 
-## Cross-Chain Integration and Shadow NFTs
+For local testing, the game includes mock implementations of Web3 functionality that simulate blockchain interactions without requiring actual tokens or connections.
 
-### Shadow NFT System
-- **Concept**: Shadow NFTs are representations of NFTs from other blockchains
-- **Technical Implementation**: Uses cross-chain oracles and bridges to verify ownership
-- **Synchronization**: Automatic updates when original NFT properties change
-- **Gas Optimization**: Reduces transaction costs by keeping game actions on Abstract Chain
+## Game Controls
 
-### The Plague NFT Integration (Ethereum Mainnet)
-- **Original NFTs**: The Plague collection on Ethereum mainnet
-- **Shadow Representation**: Each Plague NFT has a Shadow counterpart on Abstract Chain
-- **Verification Mechanism**: ZK-proof system to verify ownership without revealing wallet details
-- **Benefits**: Plague NFT holders receive special units, abilities, and visual customizations
-- **Cross-Chain Bridge**: Custom bridge contract for secure asset verification
-- **Update Frequency**: Shadow NFTs sync with originals every 24 hours or on-demand
+- **Tower Placement**: Select a tower type and click on the map to place it
+- **Tower Info**: Click on a placed tower to view stats and upgrade options
+- **Wave Control**: Use the Start Wave button to begin enemy waves
+- **Speed Control**: Adjust game speed for faster gameplay
+- **Abilities**: Use special abilities like "Karen Repellent" during tough waves
 
-### Wen Utility Multi-Chain Integration
-- **Supported Chains**:
-    - Ethereum Mainnet
-    - Polygon
-    - Avalanche
-- **NFT Recognition**: System recognizes Wen Utility NFTs across all three chains
-- **Chain-Specific Benefits**:
-    - Ethereum: Premium coffee shop skins and highest tier bonuses
-    - Polygon: Special defensive abilities and medium tier bonuses
-    - Avalanche: Unique offensive abilities and specialized towers
-- **Cross-Chain Verification**: Multi-signature verification system
-- **Interoperability Protocol**: Custom-built protocol for seamless integration
-- **Fallback Mechanism**: If one chain is congested, verification falls back to alternative chains
+## Development Notes
 
-### Technical Implementation
-- **Indexing Service**: Custom indexer that monitors NFT events across chains
-- **Caching System**: Caches verification results to minimize cross-chain calls
-- **Security Measures**:
-    - Multi-layered verification
-    - Timelock for major changes
-    - Circuit breakers for unusual activity
-- **Performance Optimization**: Batched verification for multiple NFTs
-- **User Experience**: Transparent to users - automatic detection of eligible NFTs in connected wallets
+- The mock Web3 implementation allows testing without blockchain connections
+- For full functionality, connect a Web3 wallet containing the appropriate tokens/NFTs
+- All contract addresses are configurable in `blockchain-config.js`
 
-## $GRIND Token and Token Sinks
+## License
 
-### $GRIND Token
-- **Utility**: Main currency of the ecosystem
-- **Origin**: Developed by the Grind The Coin team
-- **Integration**: Via GrindTokenInterface.js
+MIT License - See LICENSE file for details.
 
-### Token Sinks (Consumption Mechanisms)
-1.  **Power-ups and Upgrades Purchases**:
-    - Double Shot: Doubles tower power
-    - Speed Boost: Increases attack speed
-    - Money Maker: Doubles money gains
-    - Freeze Time: Freezes enemies
-    - Instant Cash: Immediate money
-    - Permanent upgrades (extra life, starting capital, etc.)
-
-2.  **Burning System for Unique Rewards**:
-    - Exclusive Grind Hamster Tower
-    - Golden skin for towers
-    - Automatic collector
-    - Permanent Double XP
-    - Karen Repellent (slows down all enemies)
-
-3.  **Integration with makingcoffee.com**:
-    - Order real coffee with $GRIND tokens
-    - Various products (espresso, latte, cappuccino, etc.)
-
-### Obtaining Token
-- **Purchase**: Buying $GRIND on the open crypto market and fiat (credit cards).
-- **Play to Earn**: Earned while playing the game, depending on whether the project can obtain a grant and inject 100% of those funds into the game to be earned by gamers.
-- TBC.
-
-## Grind Mascot Integration
-
-### Six Integration Options
-1.  **Guide/Narrator Character**:
-    - Interactive dialogue
-    - Tutorials and tips
-    - Reactions to game events
-
-2.  **Special "Grind Hamster" Tower**:
-    - Throws coffee beans at enemies
-    - 5-level upgrade system
-    - Special abilities (Coffee Rain, Energy Boost)
-
-3.  **In-Game Shop Mascot**:
-    - Customized shop interface
-    - Specific dialogues during purchases
-    - Special offers and promotions
-
-4.  **Special "Supreme Karen" Enemy with Grind**:
-    - End-of-level boss with Grind as a "hostage"
-    - Phase system with evolving abilities
-    - Special reward when Grind escapes
-
-5.  **Companion System**:
-    - Follows the player's cursor
-    - Automatic resource collection
-    - Upgrade and customization system
-    - Unlockable outfits and accessories
-
-6.  **"Grind Runner" Mini-Game**:
-    - Bonus game accessible from the main menu
-    - Runner style with obstacles
-    - Rewards usable in the main game
-
-## Plague Units and Contamination Zones
-
-### Plague Units
-- **Dual Role**: Appear both as enemies and defensive allies
-- **Special Abilities**: Unique attacks and status effects
-- **Summoning**: Possibility to summon them to help with defense
-- **Connection to Ethereum NFTs**: Enhanced units for The Plague NFT holders
-- **Cross-Chain Benefits**: Special abilities unlocked based on original NFT traits
-
-### Contamination Zones
-- **Concept**: Special areas on the map
-- **Advantages**: Provide bonuses to towers placed inside
-    - Damage increase
-    - Range increase
-    - Attack speed increase
-    - Special effects (critical, slowing, etc.)
-- **Disadvantages**: Attract stronger enemies
-- **Strategy**: Risk/reward balance
-
-## Coffee Shops and NFTs
-
-### Coffee Shops
-- **Concept**: Represent the buildings to defend
-- **Customization**: Different styles and appearances
-- **Progression**: Unlocking new cafes with unique layouts
-- **Cross-Chain Representation**: Shadow NFTs of Wen Utility coffee shops
-
-### NFT System
-- **Representation**: NFTs correspond to coffee shops
-- **Ownership**: Possession of customizable coffee franchises
-- **Benefits**: Specific bonuses according to the type of coffee shop
-- **Cross-Chain Recognition**: System recognizes NFTs from Ethereum, Polygon, and Avalanche
-- **Chain-Specific Bonuses**: Different perks based on the blockchain of the original NFT
-
-## Technologies Used
-
-### Frontend
-- **Framework**: Next.js
-- **Language**: TypeScript/JavaScript
-- **Rendering**: React with JSX/TSX components
-- **Styles**: CSS modules and Tailwind CSS
-- **Internationalization**: Custom i18n system
-
-### Backend and Blockchain
-- **Smart Contracts**: Solidity
-- **Web3 Integration**: ethers.js
-- **Authentication**: Privy and Abstract Global Wallet
-- **API**: RESTful for integration with makingcoffee.com
-- **Cross-Chain Communication**:
-    - Custom oracle system
-    - Chainlink for price feeds
-    - LayerZero for cross-chain messaging
-    - Axelar for general interoperability
-
-### Cross-Chain Technical Stack
-- **Indexing**: The Graph for multi-chain data indexing
-- **Verification**: ZK-proofs for ownership verification
-- **Bridges**: Custom bridge contracts for asset verification
-- **State Synchronization**: Event-driven architecture for state updates
-- **Caching Layer**: Redis for high-performance caching of verification results
-- **Fallback System**: Multi-chain redundancy for high availability
-
-### Game Engine
-- **Rendering**: HTML5 Canvas
-- **Physics**: Custom system for collision detection
-- **Animation**: Sprite and state system
-- **Audio**: HTML5 audio system with sound effects and music
-
-### Development Tools
-- **Version Control**: Git
-- **Package Manager**: npm/yarn
-- **Build System**: Webpack via Next.js
-- **Testing**: Jest for unit tests
-- **Cross-Chain Testing**: Custom testing framework for multi-chain interactions
-
-## Deployment and Testing
-
-### Local Testing Instructions
-- Development environment setup
-- Dependencies installation
-- Wallet configuration for Abstract Testnet
-- Obtaining test tokens
-- Launching the development server
-- Testing cross-chain functionality with local blockchain nodes
-
-### Deployment
-- Website deployment via Vercel or similar
-- Smart contracts deployment on Abstract Chain
-- Integration with external services (makingcoffee.com)
-- Cross-chain bridges and oracles deployment
-- Monitoring system for cross-chain operations
-
-## Roadmap and Evolution
-
-### Planned Future Features
-- New types of towers and enemies
-- Season system with changing themes
-- Cooperative multiplayer mode
-- Global ranking system
-- Time-limited events
-- Expanded cross-chain support for additional blockchains
-
-### Future Integrations
-- More options for using the $GRIND token
-- Ecosystem expansion with other games
-- Partnerships with other blockchain projects
-- Enhanced cross-chain functionality with emerging L2 solutions
-
-### Coffee Defense Team
+### Coffee Defense: A Karen Story Team
 - **Project Lead**: Rana Stoica - contact@ranastoica.xyz
-- **Lead Dev**: Manus AI
-- **Dev Assistant**: Gemini AI
+- **Lead Dev**: Claude AI
+- **Dev Assistants**: Manus AI, Gemini AI 2.5 Pro & ChatGPT o3
 
----
-
-This document provides a comprehensive overview of the features and technologies of the Coffee Defense game, allowing for a quick understanding of the concept, mechanics, and technical architecture of the project. Note that $GRIND is not developed or deployed by the Coffee Defense Team.
+For questions or support, please open an issue on this repository.
