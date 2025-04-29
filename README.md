@@ -1,4 +1,7 @@
-⚠️ **WARNING**: This project is in test phase for the $GRIND VIBECODE HACKATHON. DO NOT use main-net wallets with this application. Only use test-net wallets specifically created for testing purposes. Actual implementationWeb3 features will start closer to the submission deadline for Hackathon.
+⚠️ **WARNING**: This project MISSED THE $GRIND VIBECODE HACKATHON DEADLINE. 
+Development continues at a slower pace.
+DO NOT use main-net wallets with this application. Only use test-net wallets specifically created for testing purposes. 
+Actual implementationWeb3 features will start closer to the submission deadline for Hackathon.
 
 ---
 
